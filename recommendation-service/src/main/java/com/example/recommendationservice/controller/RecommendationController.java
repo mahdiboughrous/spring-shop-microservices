@@ -1,23 +1,15 @@
 package com.example.recommendationservice.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.recommendationservice.dto.CreateRecommendationRequest;
 import com.example.recommendationservice.model.Recommendation;
 import com.example.recommendationservice.service.RecommendationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 
@@ -25,8 +17,12 @@ import com.example.recommendationservice.service.RecommendationService;
 @RequestMapping("/recommendations")
 public class RecommendationController {
 
+    private final RecommendationService recommendationService;
+
     @Autowired
-    private RecommendationService recommendationService;
+    public RecommendationController(RecommendationService recommendationService) {
+        this.recommendationService = recommendationService;
+    }
 
 
     @GetMapping
@@ -55,21 +51,6 @@ public class RecommendationController {
         return ResponseEntity.ok().body(response);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Recommendation> updateRecommendation(@PathVariable int id, @RequestBody Recommendation recommendationDetails) {
-        // Return updated mock data
-        Recommendation updatedRecommendation = new Recommendation(id, recommendationDetails.getProductId(), recommendationDetails.getAuthor(), recommendationDetails.getRate(), recommendationDetails.getContent());
-        recommendationService.updateRecommendation(id, recommendationDetails);
-        return ResponseEntity.ok(updatedRecommendation);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteRecommendation(@PathVariable int id) {
-
-        recommendationService.deleteRecommendation(id);
-
-        return ResponseEntity.noContent().build();
-    }
 
     // get recommendations by product id
     @GetMapping("/products/{productId}")

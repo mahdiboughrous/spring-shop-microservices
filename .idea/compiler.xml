@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="authserver" />
         <module name="eureka" />
         <module name="product-composite-service" />
         <module name="review-service" />
@@ -17,6 +16,9 @@
         <module name="recommendation-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authserver" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
