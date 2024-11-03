@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.recommendationservice.dto.CreateRecommendationRequest;
 import com.example.recommendationservice.model.Recommendation;
-import com.example.recommendationservice.repository.IRecommendationRepository;
+import com.example.recommendationservice.repository.RecommendationRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class RecommendationService {
 
     @Autowired
-    private IRecommendationRepository recommendationRepository;
+    private RecommendationRepository recommendationRepository;
 
     public List<Recommendation> getAllRecommendations() {
         return recommendationRepository.findAll();
@@ -58,8 +58,6 @@ public class RecommendationService {
 
     // get recommendations by product id
     public List<Recommendation> getRecommendationsByProductId(int productId) {
-        List<Recommendation> recommendations =  recommendationRepository.findAll();
-        recommendations.stream().filter(recommendation -> recommendation.getProductId() == productId);
-        return recommendations;
+        return recommendationRepository.findByProductId(productId);
     }
 }
