@@ -1,4 +1,4 @@
-package com.boughrous.recommendationservice.model;
+package com.example.recommendationservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.boughrous.recommendationservice.dto;
+package com.example.recommendationservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

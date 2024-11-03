@@ -1,4 +1,4 @@
-package com.boughrous.model;
+package com.example.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

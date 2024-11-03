@@ -1,4 +1,4 @@
-package com.boughrous.recommendationservice.controller;
+package com.example.recommendationservice.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boughrous.recommendationservice.dto.CreateRecommendationRequest;
-import com.boughrous.recommendationservice.model.Recommendation;
-import com.boughrous.recommendationservice.service.RecommendationService;
+import com.example.recommendationservice.dto.CreateRecommendationRequest;
+import com.example.recommendationservice.model.Recommendation;
+import com.example.recommendationservice.service.RecommendationService;
 
 
 

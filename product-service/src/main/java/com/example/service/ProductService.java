@@ -1,4 +1,4 @@
-package com.boughrous.service;
+package com.example.service;
 
 
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.boughrous.model.Product;
-import com.boughrous.repository.IProductRepository;
+import com.example.model.Product;
+import com.example.repository.IProductRepository;
 
 
 @Service

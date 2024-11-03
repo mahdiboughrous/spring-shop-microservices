@@ -1,4 +1,4 @@
-package com.boughrous.controller;
+package com.example.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boughrous.model.Product;
-import com.boughrous.dto.CreateProductRequest;
-import com.boughrous.service.ProductService;
+import com.example.model.Product;
+import com.example.dto.CreateProductRequest;
+import com.example.service.ProductService;
 
 
 @RestController

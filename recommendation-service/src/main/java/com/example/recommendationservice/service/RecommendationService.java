@@ -1,11 +1,11 @@
-package com.boughrous.recommendationservice.service;
+package com.example.recommendationservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.boughrous.recommendationservice.dto.CreateRecommendationRequest;
-import com.boughrous.recommendationservice.model.Recommendation;
-import com.boughrous.recommendationservice.repository.IRecommendationRepository;
+import com.example.recommendationservice.dto.CreateRecommendationRequest;
+import com.example.recommendationservice.model.Recommendation;
+import com.example.recommendationservice.repository.IRecommendationRepository;
 
 import java.util.List;
 import java.util.Optional;
