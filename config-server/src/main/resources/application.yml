@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          skip-ssl-validation: true
+          uri: https://github.com/mahdiboughrous/spring-shop-backend-configs
+
+server:
+    port: 7777 

@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: product-composite-service
+  # enable feign circuit breaker
+
+  config:
+    import: 
+      - optional:configserver:http://localhost:7777/
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 5000ms
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        permittedNumberOfCallsInHalfOpenState: 5
+        minimumNumberOfCalls: 5
+        registerHealthIndicator: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  level:
+    
+    resilience4j.circuitbreaker: DEBUG
+    resilience4j.ratelimiter: DEBUG
+    org.springframework.cloud.openfeign: DEBUG
