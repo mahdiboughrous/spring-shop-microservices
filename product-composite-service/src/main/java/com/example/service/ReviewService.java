@@ -16,21 +16,6 @@ public class ReviewService {
 
     private final ReviewClient reviewClient;
 
-    // get all reviews 
-    public List<Review> getAllReviews() {
-        return reviewClient.getAllReviews();
-    }
-
-    // get review by id
-    public Review getReviewById(int id) {
-        return reviewClient.getReviewById(id);
-    }
-
-    // create review
-    public void createReview(CreateReviewRequest review) {
-        reviewClient.createReview(review);
-    }
-
     // get reviews by product id
     public List<Review> getReviewsByProductId(int productId) {
         return reviewClient.getReviewsByProductId(productId);

@@ -16,22 +16,6 @@ public class RecommendationService {
 
     private final RecommendationClient recommendationClient;
 
-
-    // get all recommendaitnos
-    public List<Recommendation> getAllRecommendations() {
-        return recommendationClient.getAllRecommendations();
-    }
-
-    // get recommendation by id
-    public Recommendation getRecommendationById(int id) {
-        return recommendationClient.getRecommendationById(id);
-    }
-
-    // create recommendation
-    public void createRecommendation(CreateRecommendationRequest recommendation) {
-        recommendationClient.createRecommendation(recommendation);
-    }
-
     // get recommendations by product id
     public List<Recommendation> getRecommendationsByProductId(int productId) {
         return recommendationClient.getRecommendationsByProductId(productId);

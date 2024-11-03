@@ -13,20 +13,8 @@ import com.example.productcompositeservice.models.Review;
 @FeignClient(name = "review-service")
 public interface  ReviewClient {
 
-    // get all reviews
-    @GetMapping("/reviews")
-    List<Review> getAllReviews();
-
-    // get review by id
-    @GetMapping("/reviews/{id}")
-    Review getReviewById(int id);
-
     // get reviews by product id
     @GetMapping("/reviews/products/{productId}")
     List<Review> getReviewsByProductId(@PathVariable int productId);
 
-    // create review
-    @PostMapping("/reviews")
-    void createReview(CreateReviewRequest review);
-    
 }

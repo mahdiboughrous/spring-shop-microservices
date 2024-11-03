@@ -14,18 +14,6 @@ import com.example.productcompositeservice.models.Recommendation;
 @FeignClient(name = "recommendation-service")
 public interface RecommendationClient {
 
-    // get all recommendations
-    @GetMapping("/recommendations")
-    List<Recommendation> getAllRecommendations();
-
-    // get recommendation by id
-    @GetMapping("/recommendations/{id}")
-    Recommendation getRecommendationById(int id);
-
-    // create recommendation
-    @PostMapping("/recommendations")
-    void createRecommendation(CreateRecommendationRequest recommendation);
-
     // get recommendations by product id
     @GetMapping("/recommendations/products/{productId}")
     List<Recommendation> getRecommendationsByProductId(@PathVariable int productId);

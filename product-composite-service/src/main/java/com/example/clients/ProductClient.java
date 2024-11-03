@@ -13,17 +13,6 @@ import com.example.productcompositeservice.models.Product;
 @FeignClient(name = "product-service", fallback = ProductClientFallback.class)
 public interface ProductClient {
 
-
-    // get all products
-    @GetMapping("/products")
-    List<Product> getAllProducts();
-
-    // get product by id
     @GetMapping("/products/{id}")
     Product getProductById(@PathVariable int id);
-
-    // create product
-    @PostMapping("/products")
-    void createProduct(CreateProductRequest product);
-
 }

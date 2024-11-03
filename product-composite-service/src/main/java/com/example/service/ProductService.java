@@ -24,33 +24,11 @@ public class ProductService {
     private final ProductClient productClient;
     public static int counter = 0;
 
-    // get all products
-    @CircuitBreaker(name = "productService", fallbackMethod = "productServiceFallback")
-    public List<Product> getAllProducts() {
-        // count the number of times the getAllProducts method is called
-        counter++;
-        logger.atInfo().log("getAllProducts method called " + counter + " times");
-        return productClient.getAllProducts();
-    }
-
-    // fallback method for getAllProducts
-    public List<Product> productServiceFallback(Exception e) {
-
-        logger.atInfo().log("Fallback method for getAllProducts called");
-        // return empty list of products
-        List<Product> products = List.of(new Product());
-        return products;
-
-    }
 
     // get product by id
     public Product getProductById(int id) {
         return productClient.getProductById(id);
     }
 
-    // create product
-    public void createProduct(CreateProductRequest product) {
-        productClient.createProduct(product);
-    }
 
 }
