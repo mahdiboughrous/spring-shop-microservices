@@ -1,19 +1,18 @@
 package com.example.recommendationservice.service;
 
-import com.example.recommendationservice.model.Recommendation;
-import com.example.recommendationservice.repository.RecommendationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.example.recommendationservice.model.Recommendation;
+import com.example.recommendationservice.repository.RecommendationRepository;
 
 @Service
 public class RecommendationService {
 
     private final RecommendationRepository recommendationRepository;
 
-    @Autowired
     public RecommendationService(RecommendationRepository recommendationRepository) {
         this.recommendationRepository = recommendationRepository;
     }

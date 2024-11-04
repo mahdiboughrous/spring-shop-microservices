@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;
+
 import reactor.core.publisher.Mono;
 
 @SpringBootApplication
@@ -15,7 +16,9 @@ public class GatewayApplication {
 	@Bean
 	public KeyResolver userKeyResolver() {
 		return exchange -> {
-			String ipAddress = exchange.getRequest().getRemoteAddress().getAddress().getHostAddress();
+			@SuppressWarnings("null")
+			String ipAddress = exchange.getRequest().getRemoteAddress() != null ? 
+				exchange.getRequest().getRemoteAddress().getAddress().getHostAddress() : "unknown";
 			System.out.println("Resolving rate limit key for IP: " + ipAddress);
 			return Mono.just(ipAddress);
 		};
