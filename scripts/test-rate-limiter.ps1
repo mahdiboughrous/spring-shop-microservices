@@ -2,7 +2,7 @@
 # This script sends multiple requests to a specified endpoint to test rate limiting
 
 # Define the target URL
-$uri = "http://localhost:9000/product-service/products"  # Replace with your actual endpoint
+$uri = "http://localhost:9000/products"  # Replace with your actual endpoint
 
 # Define the number of requests to send
 $numRequests = 20
